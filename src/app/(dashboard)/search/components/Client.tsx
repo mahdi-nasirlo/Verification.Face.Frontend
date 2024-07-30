@@ -1,78 +1,95 @@
-"use client"
+"use client";
 
-import { CardWrapper } from '@/root/src/components/CardWrappper'
-import Title from '@/root/src/components/Title'
-import BreadcrumbPage from '@/root/src/components/breadcrumb-page/breadcrumb-page'
-import InputFilePond from '@/root/src/components/fields/input-file-pond'
-import { _face } from '@/root/src/constants/Face'
-import { _recognition } from '@/root/src/constants/Recognition'
-import { useGetAll } from '@/root/src/hooks/Recognition/useGetAll'
-import { NewSearchType, useNewSearch } from '@/root/src/hooks/Recognition/useNewSearch'
-import { Button, Card, Col, Descriptions, Flex, Form, Row, Select, Tag } from 'antd'
-import Meta from 'antd/lib/card/Meta'
-import { Loader, Upload } from 'lucide-react'
-import { useRouter } from 'next-nprogress-bar'
-import Image from 'next/image'
-import React from 'react'
-import SimilarImage from './SimilarImage'
+import { CardWrapper } from "@/root/src/components/CardWrappper";
+import Title from "@/root/src/components/Title";
+import BreadcrumbPage from "@/root/src/components/breadcrumb-page/breadcrumb-page";
+import InputFilePond from "@/root/src/components/fields/input-file-pond";
+import { _face } from "@/root/src/constants/Face";
+import { _recognition } from "@/root/src/constants/Recognition";
+import { useGetAll } from "@/root/src/hooks/Recognition/useGetAll";
+import {
+  NewSearchType,
+  useNewSearch,
+} from "@/root/src/hooks/Recognition/useNewSearch";
+import {
+  Button,
+  Card,
+  Col,
+  Descriptions,
+  Flex,
+  Form,
+  Row,
+  Select,
+  Tag,
+} from "antd";
+import Meta from "antd/lib/card/Meta";
+import { Loader, Upload } from "lucide-react";
+import { useRouter } from "next-nprogress-bar";
+import Image from "next/image";
+import React from "react";
+import SimilarImage from "./SimilarImage";
 
 export default function Client() {
+  const router = useRouter();
 
-    const router = useRouter()
+  const { isPending, mutateAsync, data } = useNewSearch();
 
-    const { isPending, mutateAsync, data } = useNewSearch()
+  const getAll = useGetAll({ need_Detail: true });
 
-    const getAll = useGetAll({ need_Detail: true })
+  const onFinish = async (data: any) => {
+    const res = await mutateAsync(data);
 
-    const onFinish = async (data: any) => {
+    console.log(res);
+  };
 
-        const res = await mutateAsync(data)
-
-        console.log(res);
-
-    }
-
-    return (
-        <>
-            <BreadcrumbPage>
-                <div className='flex gap-5 flex-col'>
-                    <div className='text-primary font-bold text-xl'>
-                        جستوجو
-                    </div>
-                    <div className='bg-secondary rounded-md p-5 flex flex-col gap-5'>
-                        <Title icon={Upload}>
-                            آپلود تصویر
-                        </Title>
-                        <Form disabled={isPending} onFinish={onFinish} layout='vertical'>
-                            <Row gutter={[25, 25]}>
-                                <Col xs={24} md={6}>
-                                    <Form.Item<NewSearchType> name="image_Base64">
-                                        <InputFilePond maxFileSize="1MB" allowFileEncode />
-                                    </Form.Item>
-                                </Col>
-                                <Col xs={24} sm={12} className='flex flex-col gap-3'>
-                                    <Form.Item label="جنسیت">
-                                        <Select />
-                                    </Form.Item>
-                                    <Form.Item label="رده سنی">
-                                        <Select />
-                                    </Form.Item>
-                                </Col>
-                                <Col span={24}>
-                                    <Flex gap={10} justify="end">
-                                        <Button loading={isPending} disabled={isPending} type="link" className="min-w-full lg:min-w-56">
-                                            انصراف
-                                        </Button>
-                                        <Button loading={isPending} disabled={isPending} htmlType="submit" type="primary" className="min-w-full lg:min-w-56">
-                                            ثبت
-                                        </Button>
-                                    </Flex>
-                                </Col>
-                            </Row>
-                        </Form>
-                    </div>
-                </div>
-                {(data?.length || getAll.data?.length) && <div className='flex gap-5 flex-col mt-5'>
+  return (
+    <>
+      <BreadcrumbPage>
+        <div className="flex gap-5 flex-col">
+          <div className="text-primary font-bold text-xl">جستوجو</div>
+          <div className="bg-secondary rounded-md p-5 flex flex-col gap-5">
+            <Title icon={Upload}>آپلود تصویر</Title>
+            <Form disabled={isPending} onFinish={onFinish} layout="vertical">
+              <Row gutter={[25, 25]}>
+                <Col xs={24} md={6}>
+                  <Form.Item<NewSearchType> name="image_Base64">
+                    <InputFilePond maxFileSize="1MB" allowFileEncode />
+                  </Form.Item>
+                </Col>
+                <Col xs={24} sm={12} className="flex flex-col gap-3">
+                  <Form.Item label="جنسیت">
+                    <Select />
+                  </Form.Item>
+                  <Form.Item label="رده سنی">
+                    <Select />
+                  </Form.Item>
+                </Col>
+                <Col span={24}>
+                  <Flex gap={10} justify="end">
+                    <Button
+                      loading={isPending}
+                      disabled={isPending}
+                      type="link"
+                      className="min-w-full lg:min-w-56"
+                    >
+                      انصراف
+                    </Button>
+                    <Button
+                      loading={isPending}
+                      disabled={isPending}
+                      htmlType="submit"
+                      type="primary"
+                      className="min-w-full lg:min-w-56"
+                    >
+                      ثبت
+                    </Button>
+                  </Flex>
+                </Col>
+              </Row>
+            </Form>
+          </div>
+        </div>
+        {/* {(data?.length || getAll.data?.length) && <div className='flex gap-5 flex-col mt-5'>
                     <div className='rounded-md p-5 flex flex-col gap-5'>
                         <Title icon={Upload}>
                             آپلود تصویر
@@ -96,8 +113,8 @@ export default function Client() {
                             })}
                         </Row>
                     </div>
-                </div>}
-            </BreadcrumbPage>
-        </>
-    )
+                </div>} */}
+      </BreadcrumbPage>
+    </>
+  );
 }

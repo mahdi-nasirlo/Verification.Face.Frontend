@@ -2,6 +2,9 @@ import { ThemeConfig } from "antd";
 
 const CustomTheme: ThemeConfig = {
   components: {
+    Layout: {
+      bodyBg: "#464951",
+    },
     Input: {
       colorBorder: "rgba(117, 117, 117, 0.76)",
       activeShadow: "0 0 0 2px rgb(255 255 255 / 19%)",
@@ -25,9 +28,9 @@ const CustomTheme: ThemeConfig = {
   },
   token: {
     colorBgLayout: "#11112d",
-    colorBgBase: "#0d0b1d",
+    colorBgBase: "#373A41",
     colorTextBase: "#D3D4D4",
-    colorBgContainer: "#0d0b1d",
+    colorBgContainer: "#35373C",
     colorTextDescription: "#727272",
     fontFamily: "IRANSansfanum",
     fontSize: 16,

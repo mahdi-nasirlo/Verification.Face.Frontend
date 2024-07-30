@@ -33,10 +33,14 @@ export default function AccountMenu() {
     <Avatar key="avatar" size={50}>
       <User className="size-8" />
     </Avatar>,
-    <Typography key={"timer"} className="font-bold">
+    <Typography key={"timer"} className="font-bold hidden md:block">
       زمان باقی مانده: <span>8:45</span>
     </Typography>,
-    <div key={"head_action_1"} onClick={() => setOpen(true)}>
+    <div
+      key={"head_action_1"}
+      className="hidden md:block"
+      onClick={() => setOpen(true)}
+    >
       <Button type="default">
         خروج
         <LogOutIcon />
@@ -45,7 +49,7 @@ export default function AccountMenu() {
   ];
 
   return (
-    <>
+    <div className="flex items-center gap-1 lg:gap-5 text-primary">
       {item.map((i, index) => (
         <motion.div
           key={"head_action" + index}
@@ -96,6 +100,6 @@ export default function AccountMenu() {
         </Typography>
         <Divider />
       </Modal>
-    </>
+    </div>
   );
 }

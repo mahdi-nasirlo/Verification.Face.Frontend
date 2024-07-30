@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { HTMLProps, useLayoutEffect, useState } from "react";
 
 interface Props {
-  className?: HTMLProps<HTMLElement>["className"]
+  className?: HTMLProps<HTMLElement>["className"];
   BreadcrumbList?: {
     label: string;
     pathName?: string;
@@ -15,11 +15,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function BreadcrumbPage({
-  className,
-  children,
-}: Props) {
-
+export default function BreadcrumbPage({ className, children }: Props) {
   const [showChildren, setShowChildren] = useState(false);
 
   useLayoutEffect(() => {
@@ -31,7 +27,7 @@ export default function BreadcrumbPage({
   }, []);
 
   return (
-    <div className={className + " m-3 xl:m-8"}>
+    <div className={className + ""}>
       {/* <div className="flex justify-between items-center pr-1 py-2 lg:pr-2 lg:py-3"> */}
       {/* <motion.div
           className="flex"
@@ -100,7 +96,7 @@ export default function BreadcrumbPage({
           initial={{ y: -15, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
-          <div className="max-h-[87vh] lg:max-h-[85vh] overflow-y-auto h-full p-3 lg:p-5 bg-white border overflow-x-hidden rounded-md">
+          <div className="max-h-[87vh] lg:max-h-[85vh] overflow-y-auto h-full p-3 lg:p-5 overflow-x-hidden rounded-md">
             {children}
           </div>
         </motion.div>

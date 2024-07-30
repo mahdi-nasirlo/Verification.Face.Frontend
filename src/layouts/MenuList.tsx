@@ -1,9 +1,48 @@
-import React, { useEffect, useState, useCallback } from "react";
 import { Menu } from "antd";
+import { motion } from "framer-motion";
+import {
+  Camera,
+  FolderOpen,
+  HomeIcon,
+  ImagePlus,
+  LayoutPanelLeft,
+  ScanSearchIcon,
+  Users,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { ArchiveRestore, BookUser, Building, CircleUser, FolderOpen, LayoutPanelLeft, NotebookTabs, PencilRuler, ReceiptText, ScanSearchIcon, UserRoundCog } from "lucide-react";
+import React, { useCallback, useEffect, useState } from "react";
+import { TMenuItem } from "./MenuItem";
+
+export const menuListItems: TMenuItem[] = [
+  {
+    icon: HomeIcon,
+    href: "/dashboard",
+    children: "خانه",
+  },
+  {
+    icon: FolderOpen,
+    href: "/folder",
+    children: "پوشه ها",
+  },
+  {
+    icon: ImagePlus,
+    href: "/upload",
+    children: "تصاویر",
+  },
+  {
+    icon: Users,
+    href: "#",
+    children: "کاربران",
+    disabled: true,
+  },
+  {
+    icon: Camera,
+    href: "#",
+    children: "دوربین",
+    disabled: true,
+  },
+];
 
 interface ItemMenuChild {
   key: string;
@@ -23,13 +62,17 @@ interface ItemMenu {
   children?: ItemMenuChild[];
 }
 
-const items: ItemMenu[] = [
-  { key: "1", url: "/dashboard", label: "داشبورد", icon: <LayoutPanelLeft /> },
-  { key: "3", url: "/folder", label: "مدیریت پوشه", icon: <FolderOpen /> },
-  { key: "4", url: "/search", label: "استعلام", icon: <ScanSearchIcon /> },
-];
+const items: ItemMenu[] = menuListItems.map((i, index) => ({
+  key: `${index}`,
+  label: i.children as string,
+  icon: <i.icon />,
+  url: i.href,
+}));
 
-const findKeys = (pathname: string, items: ItemMenu[]): { openKeys: string[]; selectedKey: string } => {
+const findKeys = (
+  pathname: string,
+  items: ItemMenu[]
+): { openKeys: string[]; selectedKey: string } => {
   let openKeys: string[] = [];
   let selectedKey: string = "";
 
@@ -54,7 +97,10 @@ const findKeys = (pathname: string, items: ItemMenu[]): { openKeys: string[]; se
   return { openKeys, selectedKey };
 };
 
-const MenuList: React.FC<{ className?: string; onClose?: () => void }> = ({ className, onClose }) => {
+const MenuList: React.FC<{ className?: string; onClose?: () => void }> = ({
+  className,
+  onClose,
+}) => {
   const pathname = usePathname();
   const [openKeys, setOpenKeys] = useState<string[]>([]);
   const [selectedKey, setSelectedKey] = useState<string>("");
@@ -65,30 +111,33 @@ const MenuList: React.FC<{ className?: string; onClose?: () => void }> = ({ clas
     setSelectedKey(selectedKey);
   }, [pathname]);
 
-  const renderMenuItem = useCallback((item: ItemMenuChild | ItemMenu) => {
-    if (item.type === "divider") {
-      return (<Menu.Divider key={item.key} />);
-    }
-    if (item.type === "group" && item.children) {
+  const renderMenuItem = useCallback(
+    (item: ItemMenuChild | ItemMenu) => {
+      if (item.type === "divider") {
+        return <Menu.Divider key={item.key} />;
+      }
+      if (item.type === "group" && item.children) {
+        return (
+          <Menu.ItemGroup key={item.key} title={item.label}>
+            {item.children.map((child) => renderMenuItem(child))}
+          </Menu.ItemGroup>
+        );
+      }
+      if (item.children) {
+        return (
+          <Menu.SubMenu key={item.key} icon={item.icon} title={item.label}>
+            {item.children.map((child) => renderMenuItem(child))}
+          </Menu.SubMenu>
+        );
+      }
       return (
-        <Menu.ItemGroup key={item.key} title={item.label}>
-          {item.children.map(child => renderMenuItem(child))}
-        </Menu.ItemGroup>
+        <Menu.Item key={item.key} icon={item.icon} onClick={onClose}>
+          <Link href={item.url || "#"}>{item.label}</Link>
+        </Menu.Item>
       );
-    }
-    if (item.children) {
-      return (
-        <Menu.SubMenu key={item.key} icon={item.icon} title={item.label}>
-          {item.children.map(child => renderMenuItem(child))}
-        </Menu.SubMenu>
-      );
-    }
-    return (
-      <Menu.Item key={item.key} icon={item.icon} onClick={onClose}>
-        <Link href={item.url || "#"}>{item.label}</Link>
-      </Menu.Item>
-    );
-  }, [onClose]);
+    },
+    [onClose]
+  );
 
   return (
     <motion.div
@@ -101,12 +150,14 @@ const MenuList: React.FC<{ className?: string; onClose?: () => void }> = ({ clas
         className={className}
         openKeys={openKeys}
         selectedKeys={selectedKey ? [selectedKey] : []}
-        onOpenChange={keys => setOpenKeys(keys as string[])}
+        onOpenChange={(keys) => setOpenKeys(keys as string[])}
       >
         {items.map((item) => renderMenuItem(item))}
       </Menu>
     </motion.div>
   );
 };
+
+MenuList;
 
 export default MenuList;

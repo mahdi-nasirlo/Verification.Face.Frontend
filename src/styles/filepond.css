@@ -1,0 +1,7 @@
+.filepond--drop-label {
+    @apply bg-primary-light border-dashed rounded-lg border-2 border-[#4C6EF5];
+}
+
+.filepond--drop-label {
+    @apply h-52 w-full;
+}

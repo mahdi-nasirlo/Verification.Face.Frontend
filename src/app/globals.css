@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.filepond--drop-label {
+    font-family: "IRANSansfanum" !important;
+}
+
+.filepond--credits {
+    display: none;
+}

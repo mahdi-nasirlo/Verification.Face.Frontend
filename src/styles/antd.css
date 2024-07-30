@@ -1,0 +1,527 @@
+/* start drawer */
+
+.ant-drawer-content .ant-drawer-body {
+  @apply p-0 !important;
+}
+
+/* end drawer */
+
+/* start menu */
+
+.ant-menu {
+  @apply border-e-0 lg:border-e-[0px] !important;
+}
+
+.ant-menu .ant-menu-item {
+  @apply h-11 xl:h-12 text-base active:scale-105 rounded-none mx-0 w-full !important;
+}
+
+.ant-menu .ant-menu-item-selected a::before {
+  @apply w-1.5 h-full bg-primary rounded-l-lg left-0 top-0 !important;
+}
+
+.ant-menu .ant-menu-submenu .ant-menu-submenu-title {
+  @apply h-11 xl:h-12 text-base flex items-center !important;
+}
+
+.ant-menu .ant-menu-submenu .ant-menu-submenu-title .ant-menu-item-icon {
+  @apply w-1/6 size-5 !important;
+}
+
+.ant-menu .ant-menu-item .ant-menu-item-icon {
+  @apply w-1/6 size-5 !important;
+}
+
+.ant-menu .ant-menu-item-group .ant-menu-item-group-title {
+  @apply text-base !important;
+}
+
+/* end menu */
+
+/* start dropdown-menu */
+
+.ant-dropdown-menu {
+  @apply min-w-32 lg:min-w-36 !important;
+}
+
+.ant-dropdown-menu-item {
+  @apply h-8 lg:h-9 m-0.5 flex-row-reverse text-sm lg:text-base hover:scale-105 active:scale-100 !important;
+}
+
+.ant-dropdown-menu-item-icon {
+  @apply size-4 lg:size-5 !important;
+}
+
+.ant-menu .ant-menu-item-group .ant-menu-item-group-title {
+  @apply text-base !important;
+}
+
+/* end dropdown-menu */
+
+/* start ant-button */
+
+.ant-btn {
+  @apply h-9 p-2.5 text-sm lg:h-11 lg:p-3.5 lg:text-base flex flex-row items-center justify-center hover:md:scale-105 active:max-md:scale-95 !important;
+}
+
+.ant-btn .ant-btn-icon {
+  @apply mr-0 ml-1 lg:ml-1.5 !important;
+}
+
+.ant-btn .ant-btn-icon svg {
+  @apply size-4 lg:size-5 !important;
+}
+
+/* end ant-button */
+
+/* start switch  */
+
+.ant-switch {
+  @apply hover:scale-105 active:scale-100 !important;
+}
+
+/* end switch */
+
+/* start modal */
+
+.ant-modal {
+  @apply md:min-w-[650px] !important;
+}
+
+.ant-modal-content .ant-modal-footer {
+  @apply flex w-full justify-end !important;
+}
+
+.ant-modal .ant-modal-content .ant-modal-close {
+  @apply m-3 hover:scale-105 active:scale-100 !important;
+}
+
+/* end modal */
+
+/* start form */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.ant-input-number {
+  @apply text-right justify-start;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-input {
+  @apply h-9 text-sm lg:h-11 lg:text-base flex flex-row-reverse items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-input-number {
+  @apply w-full h-9 text-sm lg:h-11 lg:text-base flex flex-row-reverse items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-input-password {
+  @apply h-9 text-sm lg:h-11 lg:text-base flex flex-row items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-input-password
+  .ant-input {
+  @apply h-8 text-sm lg:h-10 lg:text-base flex flex-row items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-input-password {
+  @apply px-1.5 !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-input-password
+  .ant-input-suffix
+  .ant-input-password-icon
+  svg {
+  @apply ml-1 size-5 !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-radio-group {
+  @apply w-full h-9 text-sm lg:h-11 lg:text-base flex items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-radio-button-wrapper {
+  @apply w-full h-9 text-sm lg:h-11 lg:text-base flex items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-radio-button-wrapper
+  span {
+  @apply flex items-center justify-center gap-3 !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-select {
+  @apply h-9 text-sm lg:h-11 lg:text-base flex flex-row-reverse items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-select
+  .ant-select-selector {
+  @apply h-9 text-sm lg:h-11 lg:text-base flex flex-row-reverse items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-select
+  .ant-select-selection-item {
+  @apply text-sm lg:text-base flex items-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-select
+  .ant-select-arrow {
+  @apply ml-1 !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-select
+  .ant-select-clear {
+  @apply ml-1.5 !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-select
+  .ant-select-arrow
+  .anticon
+  svg {
+  @apply size-3 lg:size-3.5 !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-select
+  .ant-select-clear
+  .anticon
+  svg {
+  @apply size-3 lg:size-3.5 !important;
+}
+
+.ant-select-dropdown
+  .rc-virtual-list
+  .rc-virtual-list-holder
+  .rc-virtual-list-holder-inner
+  div
+  div {
+  @apply max-h-8 lg:max-h-9 my-0.5 lg:my-1 mx-0.5 flex-row-reverse text-sm lg:text-base hover:scale-y-95 active:scale-100 !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-tree-select {
+  @apply h-9 text-sm lg:h-11 lg:text-base flex flex-row-reverse items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-tree-select
+  .ant-select-selector {
+  @apply h-9 text-sm lg:h-11 lg:text-base w-full flex flex-row-reverse items-center justify-center !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-tree-select
+  .ant-select-selector
+  .ant-select-selection-overflow
+  .ant-select-selection-overflow-item
+  .ant-select-selection-item {
+  @apply flex items-center justify-center px-1.5 py-3 lg:px-2 lg:py-4 text-sm lg:text-base !important;
+}
+
+.ant-form
+  .ant-row
+  .ant-col
+  .ant-form-item
+  .ant-form-item-row
+  .ant-form-item-control-input-content
+  .ant-tree-select
+  .ant-select-selector
+  .ant-select-selection-overflow
+  .ant-select-selection-overflow-item
+  .ant-select-selection-item
+  .ant-select-selection-item-remove
+  .anticon
+  svg {
+  @apply size-3 mr-0.5 lg:size-3.5 lg:mr-1 !important;
+}
+
+.ant-select-tree-list
+  .ant-select-tree-list-holder
+  .ant-select-tree-list-holder-inner
+  .ant-select-tree-treenode
+  .ant-select-tree-node-content-wrapper {
+  @apply text-sm lg:text-base flex items-center pr-2 lg:pr-3.5 h-6 lg:h-8 !important;
+}
+
+.ant-select-tree-list
+  .ant-select-tree-list-holder
+  .ant-select-tree-list-holder-inner
+  .ant-select-tree-treenode
+  .ant-select-tree-checkbox {
+  @apply flex items-center lg:mt-2 !important;
+}
+
+.ant-form-item {
+  @apply mb-0 !important;
+}
+
+/* end form */
+
+/* start radio */
+
+.ant-radio-group {
+  @apply w-full h-9 text-sm lg:h-11 lg:text-base flex items-center justify-center !important;
+}
+
+.ant-radio-button-wrapper {
+  @apply max-md:w-full h-9 text-sm lg:h-11 lg:text-base flex items-center justify-center hover:scale-y-105 active:scale-100 !important;
+}
+
+.ant-radio-button-wrapper span {
+  @apply flex items-center justify-center gap-3 !important;
+}
+
+/* end radio */
+
+/* start notification */
+
+.ant-notification-notice-close {
+  @apply flex items-center hover:scale-105 active:scale-100 !important;
+}
+
+.ant-notification-notice-message {
+  @apply mb-0 text-sm sm:text-base !important;
+}
+
+/* end notification */
+
+/* start checkbox */
+
+.ant-checkbox-inner {
+  @apply size-3.5 lg:size-4 !important;
+}
+
+/* end checkbox */
+
+/* start table */
+
+.ant-table
+  .ant-table-container
+  .ant-table-content
+  .ant-table-thead
+  .ant-table-cell {
+  @apply h-14 lg:h-16 text-sm lg:text-[15px] !important;
+}
+
+.ant-table
+  .ant-table-container
+  .ant-table-content
+  .ant-table-tbody
+  .ant-table-row
+  .ant-table-cell {
+  @apply h-14 lg:h-16 text-sm lg:text-[15px] !important;
+}
+
+.ant-table
+  .ant-table-container
+  .ant-table-content
+  .ant-table-tbody
+  .ant-table-row
+  .ant-table-row-expand-icon-cell
+  svg {
+  @apply size-4 hover:scale-105 cursor-pointer active:scale-100 !important;
+}
+
+.ant-table-cell {
+  @apply text-nowrap text-center !important;
+}
+
+/* end table */
+
+/* start pagination */
+
+.ant-pagination .ant-pagination-prev {
+  @apply lg:size-8 flex items-center justify-center lg:text-base !important;
+}
+
+.ant-pagination .ant-pagination-next {
+  @apply lg:size-8 flex items-center justify-center lg:text-base !important;
+}
+
+.ant-pagination .ant-pagination-item {
+  @apply lg:size-8 flex items-center justify-center lg:text-base !important;
+}
+
+.ant-pagination
+  .ant-pagination-jump-prev
+  .ant-pagination-item-container
+  .ant-pagination-item-ellipsis {
+  @apply size-7 lg:size-8 flex items-center justify-center lg:text-base !important;
+}
+
+.ant-pagination .ant-pagination-jump-prev .ant-pagination-item-container {
+  @apply size-7 lg:size-8 flex items-center justify-center lg:text-base !important;
+}
+
+.ant-pagination
+  .ant-pagination-jump-next
+  .ant-pagination-item-container
+  .ant-pagination-item-ellipsis {
+  @apply size-7 lg:size-8 flex items-center justify-center lg:text-base !important;
+}
+
+.ant-pagination .ant-pagination-jump-next .ant-pagination-item-container {
+  @apply size-7 lg:size-8 flex items-center justify-center lg:text-base !important;
+}
+
+/* end pagination */
+
+/* start notification */
+
+.ant-notification-notice-message {
+  font-family: "IRANSansfanum" !important;
+  direction: rtl;
+}
+
+/* end notification */
+
+/* start description */
+
+.ant-descriptions .ant-descriptions-item-label::after {
+  @apply hidden;
+}
+
+/* end description */
+
+/* start popover */
+
+.ant-popconfirm-buttons {
+  @apply flex gap-1 justify-end;
+}
+
+.ant-popconfirm-buttons button {
+  @apply p-1 h-auto !important;
+}
+
+/* end popover */
+
+/* card start */
+
+.ant-card-body {
+  @apply flex-grow;
+}
+
+.ant-card-meta-detail {
+  @apply flex flex-col justify-between;
+}
+
+/* card end */
+
+.DatePicker {
+  @apply w-full !important;
+}

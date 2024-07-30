@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import React, { HTMLProps, useLayoutEffect, useState } from "react";
+import CustomTheme from "../../theme/custom-theme";
+import { theme } from "antd";
 
 interface Props {
   className?: HTMLProps<HTMLElement>["className"];
@@ -16,6 +18,10 @@ interface Props {
 }
 
 export default function BreadcrumbPage({ className, children }: Props) {
+  const {
+    token: { colorPrimary, colorPrimaryBg, colorBgBase, colorBgLayout },
+  } = theme.useToken();
+
   const [showChildren, setShowChildren] = useState(false);
 
   useLayoutEffect(() => {
@@ -26,8 +32,15 @@ export default function BreadcrumbPage({ className, children }: Props) {
     return () => clearTimeout(timeout);
   }, []);
 
+  const scrollbarStyle: React.CSSProperties = {
+    background: colorBgBase,
+    scrollbarWidth: "thin",
+    scrollbarColor: `${colorPrimary} ${colorBgLayout}`,
+    overflow: "hidden !important",
+  };
+
   return (
-    <div className={className + ""}>
+    <div>
       {/* <div className="flex justify-between items-center pr-1 py-2 lg:pr-2 lg:py-3"> */}
       {/* <motion.div
           className="flex"
@@ -96,7 +109,13 @@ export default function BreadcrumbPage({ className, children }: Props) {
           initial={{ y: -15, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
-          <div className="max-h-[87vh] lg:max-h-[85vh] overflow-y-auto h-full p-3 lg:p-5 overflow-x-hidden rounded-md">
+          <div
+            style={scrollbarStyle}
+            className={
+              className +
+              " max-h-[87vh] lg:max-h-[80vh] overflow-y-auto h-full p-3 lg:p-5 overflow-x-hidden rounded-xl "
+            }
+          >
             {children}
           </div>
         </motion.div>

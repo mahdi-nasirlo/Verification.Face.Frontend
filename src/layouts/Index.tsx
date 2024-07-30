@@ -19,15 +19,8 @@ export default function LayoutMain({ children }: Props) {
     token: { borderRadiusLG },
   } = theme.useToken();
 
-  // const scrollbarStyle: React.CSSProperties = {
-  //   background: colorBgBase,
-  //   scrollbarWidth: "thin",
-  //   scrollbarColor: `${colorPrimary} ${colorPrimaryBg}`,
-  //   overflow: "hidden !important",
-  // };
-
   return (
-    <Layout className="min-h-screen max-h-screen max-w-screen">
+    <Layout className="min-h-screen max-w-screen">
       <motion.div
         exit={{ y: 100 }}
         transition={{ duration: 0.5 }}
@@ -36,9 +29,9 @@ export default function LayoutMain({ children }: Props) {
       >
         <Header />
       </motion.div>
-      <Content className="px-1 lg:px-12">
+      <Content className="px-3 md:px-5 lg:px-12 mb-5">
         <Layout
-          className="gap-8 pt-5 lg:pt-11 min-h-[85vh]"
+          className="gap-8 pt-5 lg:pt-8 min-h-[85vh]"
           style={{
             borderRadius: borderRadiusLG,
           }}
@@ -47,15 +40,15 @@ export default function LayoutMain({ children }: Props) {
           <Content>{children}</Content>
         </Layout>
       </Content>
-      <Footer
+      {/* <Footer
         style={{ background: CustomTheme.token?.colorBgContainer }}
-        className="p-2 flex justify-between text-sm font-normal px-3 z-50"
+        className="p-2 mt-3 justify-between text-sm font-normal px-3 z-50  hidden lg:flex"
       >
         <span>
           {moment().locale("fa").format("dddd jD jMMMM jYYYY - ساعت H:mm")}
         </span>
         <span className="opacity-60">نسخه ۱.۰</span>
-      </Footer>
+      </Footer> */}
     </Layout>
   );
 }

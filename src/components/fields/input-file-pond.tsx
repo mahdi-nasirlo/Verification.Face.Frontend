@@ -12,9 +12,8 @@ import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
 import FilePondPluginFileValidateSize from "filepond-plugin-file-validate-size";
 
-import "@/styles/filepond.css"
+// import "@/styles/filepond.css"
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-
 
 // Register the plugins
 registerPlugin(
@@ -45,7 +44,7 @@ export default function InputFilePond({
       if (props.allowFileEncode) {
         const base64String = await currentFile.getFileEncodeBase64String();
         const mimeType = currentFile.fileType;
-        submitFile = addBase64Prefix(base64String)
+        submitFile = addBase64Prefix(base64String);
         // submitFile = {
         //   dapperRow: "",
         //   name: currentFile.file.name,
@@ -106,10 +105,10 @@ export default function InputFilePond({
         server={
           props.allowProcess
             ? {
-              url: `${process.env.NEXT_PUBLIC_API_URL}/api/uploads`,
-              process: "/process",
-              revert: { url: "/revert/", method: "GET" },
-            }
+                url: `${process.env.NEXT_PUBLIC_API_URL}/api/uploads`,
+                process: "/process",
+                revert: { url: "/revert/", method: "GET" },
+              }
             : null
         }
         {...props}

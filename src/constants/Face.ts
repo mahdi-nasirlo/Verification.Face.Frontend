@@ -80,6 +80,7 @@ const _face = {
     type: z.object({
       parent_UID: z.string(),
       face_Image_Data_Base64: z.string(),
+      image_Storage_Status: z.number(),
       name: z.string(),
       family: z.string(),
       code_GUID: z.string(),

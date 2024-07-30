@@ -7,7 +7,7 @@ export default function Sidebar() {
   return (
     <Layout.Sider
       style={{ background: CustomTheme.token?.colorBgContainer }}
-      className="rounded-xl py-6 hidden lg:block"
+      className="rounded-xl py-6 hidden lg:block max-h-[80vh]"
       width={101}
     >
       <div className="flex flex-col justify-center gap-10 overflow-hidden">

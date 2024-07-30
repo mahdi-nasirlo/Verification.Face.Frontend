@@ -10,6 +10,7 @@ const CustomTheme: ThemeConfig = {
       activeShadow: "0 0 0 2px rgb(255 255 255 / 19%)",
     },
     Button: {
+      primaryShadow: "none",
       algorithm: true,
       defaultColor: "#FFFFFF",
       defaultBorderColor: "#FFFFFF",

@@ -1,6 +1,13 @@
 import { Menu } from "antd";
 import { motion } from "framer-motion";
-import { Camera, FolderOpen, HomeIcon, ImagePlus, Users } from "lucide-react";
+import {
+  Camera,
+  FolderOpen,
+  HomeIcon,
+  ImagePlus,
+  Search,
+  Users,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useCallback, useEffect, useState } from "react";
@@ -23,10 +30,9 @@ export const menuListItems: TMenuItem[] = [
     children: "تصاویر",
   },
   {
-    icon: Users,
-    href: "#",
-    children: "کاربران",
-    disabled: true,
+    icon: Search,
+    href: "/search",
+    children: "استعلام",
   },
   {
     icon: Camera,

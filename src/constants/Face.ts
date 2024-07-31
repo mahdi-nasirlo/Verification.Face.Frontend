@@ -13,7 +13,7 @@ const _face = {
     url: "/Face/face_info/",
     method: "GET",
     type: z.object({
-      uid: z.string(),
+      uid: z.string().optional(),
     }),
     res: z.array(
       z.object({

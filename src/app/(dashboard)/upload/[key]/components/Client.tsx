@@ -1,22 +1,15 @@
 "use client";
 
-import BreadcrumbPage from "@/root/src/components/breadcrumb-page/breadcrumb-page";
-import { Button, Steps, Typography } from "antd";
-import { AnimatePresence } from "framer-motion";
-import { CreditCard, CreditCardIcon, Image } from "lucide-react";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { Typography } from "antd";
+import { AnimatePresence, motion } from "framer-motion";
 import Upload from "./Upload";
-import { useRouter } from "next-nprogress-bar";
-import { changeTabVariant } from "@/root/src/utils/variants";
-import List from "../../../folder/components/List";
 
 type tabType = "upload" | "list";
 
 export default function Client({ folder_UID }: { folder_UID: string }) {
   return (
     <>
-      <Typography className="text-lg">آپلود تصویر</Typography>
+      <Typography className="text-lg mb-3">آپلود تصویر</Typography>
       <div className="flex gap-5 flex-col">
         <AnimatePresence mode="wait">
           <motion.div

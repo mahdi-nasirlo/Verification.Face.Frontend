@@ -15,6 +15,7 @@ const CustomTheme: ThemeConfig = {
       defaultColor: "#FFFFFF",
       defaultBorderColor: "#FFFFFF",
       borderRadius: 8,
+      colorLink: "#8552D7",
       defaultShadow: "none",
     },
     Divider: {
@@ -36,7 +37,7 @@ const CustomTheme: ThemeConfig = {
     fontFamily: "IRANSansfanum",
     fontSize: 16,
     wireframe: false,
-    colorPrimary: "#2435BA",
+    colorPrimary: "#8552D7",
     colorWarningBg: "#F25937",
   },
 };

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import CustomTheme from "./src/theme/custom-theme";
 
 const colors = require("tailwindcss/colors");
 
@@ -12,14 +13,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      borderColor: {
+        primary: CustomTheme.token?.colorPrimary,
+        ...colors,
+      },
       colors: {
         ...colors,
         primary: "#434347",
-        secondary: "#0474C9",
+        secondary: CustomTheme.token?.colorPrimary,
       },
       backgroundColor: {
         ...colors,
-        "primary-light": "#EDF1FE",
+        primary: CustomTheme.token?.colorPrimary,
         secondary: "#F5F5F6",
       },
       backgroundImage: {

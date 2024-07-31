@@ -82,7 +82,7 @@ export default function Upload({
                   }).defaultInputNumber
                 }
               >
-                <Radio.Group className="h-fit pb-3" defaultValue={1}>
+                <Radio.Group className="h-fit pb-3">
                   <Radio value={1} className="w-full">
                     درخواست ذخیره و استخراج عکس مطابق با اندازه استاندارد را
                     دارم .

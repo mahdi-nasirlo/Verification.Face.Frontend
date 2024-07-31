@@ -21,6 +21,7 @@ import {
   Row,
   Select,
   Tag,
+  Typography,
 } from "antd";
 import Meta from "antd/lib/card/Meta";
 import { Loader, Upload } from "lucide-react";
@@ -28,31 +29,36 @@ import { useRouter } from "next-nprogress-bar";
 import Image from "next/image";
 import React from "react";
 import SimilarImage from "./SimilarImage";
+import { _Form_Property } from "@/root/src/constants/Form-Property";
 
 export default function Client() {
   const router = useRouter();
 
   const { isPending, mutateAsync, data } = useNewSearch();
 
-  const getAll = useGetAll({ need_Detail: true });
-
   const onFinish = async (data: any) => {
     const res = await mutateAsync(data);
 
-    console.log(res);
+    if (res) {
+      router.push("/history");
+    }
   };
 
   return (
     <>
-      <BreadcrumbPage>
-        <div className="flex gap-5 flex-col">
-          <div className="text-primary font-bold text-xl">جستوجو</div>
-          <div className="bg-secondary rounded-md p-5 flex flex-col gap-5">
-            <Title icon={Upload}>آپلود تصویر</Title>
+      <div className="flex gap-5 flex-col">
+        <Typography className="font-bold text-xl">جستوجو</Typography>
+        <Card title="آپلود تصویر">
+          <div className="rounded-md p-5 flex flex-col gap-5">
             <Form disabled={isPending} onFinish={onFinish} layout="vertical">
               <Row gutter={[25, 25]}>
                 <Col xs={24} md={6}>
-                  <Form.Item<NewSearchType> name="image_Base64">
+                  <Form.Item<NewSearchType>
+                    rules={[
+                      { required: true, message: "آپلود تصویر اجباری است." },
+                    ]}
+                    name="image_Base64"
+                  >
                     <InputFilePond maxFileSize="1MB" allowFileEncode />
                   </Form.Item>
                 </Col>
@@ -88,8 +94,9 @@ export default function Client() {
               </Row>
             </Form>
           </div>
-        </div>
-        {/* {(data?.length || getAll.data?.length) && <div className='flex gap-5 flex-col mt-5'>
+        </Card>
+      </div>
+      {/* {(data?.length || getAll.data?.length) && <div className='flex gap-5 flex-col mt-5'>
                     <div className='rounded-md p-5 flex flex-col gap-5'>
                         <Title icon={Upload}>
                             آپلود تصویر
@@ -114,7 +121,6 @@ export default function Client() {
                         </Row>
                     </div>
                 </div>} */}
-      </BreadcrumbPage>
     </>
   );
 }

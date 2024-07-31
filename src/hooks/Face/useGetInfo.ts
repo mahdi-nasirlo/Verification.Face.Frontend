@@ -14,5 +14,6 @@ export default function useGetInfo({ uid }: TTYpe) {
     queryKey: [url, uid],
     queryFn: (): Promise<TRes> => CustomRequest({ url: url + uid, method }),
     enabled: typeof uid == "string",
+    select: (data) => data?.[0],
   });
 }

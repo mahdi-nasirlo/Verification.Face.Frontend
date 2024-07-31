@@ -184,9 +184,7 @@ input[type="number"] {
   .ant-form-item
   .ant-form-item-row
   .ant-form-item-control-input-content
-  .ant-radio-group {
-  @apply w-full h-9 text-sm lg:h-11 lg:text-base flex items-center justify-center !important;
-} */
+  des */
 
 .ant-form
   .ant-row
@@ -374,9 +372,7 @@ input[type="number"] {
 
 /* start radio */
 
-/* .ant-radio-group {
-  @apply w-full h-9 text-sm lg:h-11 lg:text-base flex items-center justify-center !important;
-} */
+/* des */
 
 .ant-radio-button-wrapper {
   @apply max-md:w-full h-9 text-sm lg:h-11 lg:text-base flex items-center justify-center hover:scale-y-105 active:scale-100 !important;
@@ -489,14 +485,6 @@ input[type="number"] {
 }
 
 /* end notification */
-
-/* start description */
-
-.ant-descriptions .ant-descriptions-item-label::after {
-  @apply hidden;
-}
-
-/* end description */
 
 /* start popover */
 

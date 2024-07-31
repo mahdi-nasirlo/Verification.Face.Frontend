@@ -12,7 +12,7 @@ export default function Sidebar() {
     >
       <div className="flex flex-col justify-center gap-10 overflow-hidden">
         {menuListItems.map((i, index) => (
-          <MenuItem {...i} delay={0.3 * index}>
+          <MenuItem {...i} delay={0.3 * index} key={index}>
             {i.children}
           </MenuItem>
         ))}

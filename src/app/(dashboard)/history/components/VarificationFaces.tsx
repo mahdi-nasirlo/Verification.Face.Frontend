@@ -102,7 +102,7 @@ export default function VarificationFaces({ data }: { data: TData }) {
         </div>
         <div className="mt-5">
           {data.faces.result.map((i) => (
-            <div className="grid grid-cols-6 gap-5">
+            <div key={i.recognition_uid} className="grid grid-cols-6 gap-5">
               <Image
                 className="object-cover w-full h-[177px] rounded-md bg-white"
                 width={500}
@@ -113,11 +113,12 @@ export default function VarificationFaces({ data }: { data: TData }) {
                 }
                 alt="example"
               />
-              <div className="grid space-x-3 gap-3 grid-cols-5 border-primary border bg-primary bg-opacity-25 rounded p-2 col-span-5">
+              <div className="flex md:grid space-x-3 gap-3 grid-cols-5 border-primary border bg-primary bg-opacity-25 rounded p-2 col-span-5 overflow-y-scroll">
                 {i.results.map((r) => (
                   <Image
+                    key={r.face_uid}
                     onClick={() => setFace(r.face_uid)}
-                    className="object-cover w-full h-40 rounded-md bg-white cursor-pointer"
+                    className="object-cover w-40 h-40 rounded-md bg-white cursor-pointer"
                     width={500}
                     height={500}
                     src={

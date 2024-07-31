@@ -6,11 +6,10 @@ import NextProgressBar from "@/provider/NextProgressBar";
 import QueryClientProvider from "@/provider/QueryClientProvider";
 import "@/styles/antd.css";
 import "@/styles/font.css";
-import '@/styles/json-viewer.css';
+import "@/styles/json-viewer.css";
 import "filepond/dist/filepond.min.css";
 import "./globals.css";
 import ProtectedRoute from "@/provider/ProtectedRoute";
-
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,20 +22,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en" dir="ltr">
       <body className={inter.className}>
-
         <AuthProvider>
-          <ProtectedRoute>
-            <AntdDesign>
+          <AntdDesign>
+            <ProtectedRoute>
               <QueryClientProvider>
                 <NextProgressBar />
                 {children}
               </QueryClientProvider>
-            </AntdDesign>
-          </ProtectedRoute>
+            </ProtectedRoute>
+          </AntdDesign>
         </AuthProvider>
       </body>
     </html>

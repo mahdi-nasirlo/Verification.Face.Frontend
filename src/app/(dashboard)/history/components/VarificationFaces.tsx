@@ -104,7 +104,7 @@ export default function VarificationFaces({ data }: { data: TData }) {
           {data.faces.result.map((i) => (
             <div key={i.recognition_uid} className="grid grid-cols-6 gap-5">
               <Image
-                className="object-cover w-full h-[177px] rounded-md bg-white"
+                className="object-cover col-span-3 md:col-span-1 object-coverw-40 h-[177px] rounded-md bg-white"
                 width={500}
                 height={500}
                 src={
@@ -113,20 +113,27 @@ export default function VarificationFaces({ data }: { data: TData }) {
                 }
                 alt="example"
               />
-              <div className="flex md:grid space-x-3 gap-3 grid-cols-5 border-primary border bg-primary bg-opacity-25 rounded p-2 col-span-5 overflow-y-scroll">
+              <div className="flex md:grid space-x-3 gap-3 grid-cols-5 border-primary border bg-primary bg-opacity-25 rounded p-2 col-span-3 md:col-span-5 overflow-y-hidden overflow-x-auto">
                 {i.results.map((r) => (
-                  <Image
+                  <div
                     key={r.face_uid}
                     onClick={() => setFace(r.face_uid)}
-                    className="object-cover w-40 h-40 rounded-md bg-white cursor-pointer"
-                    width={500}
-                    height={500}
-                    src={
-                      process.env.NEXT_PUBLIC_API_URL +
-                      `${_face.blob.url}${r.face_uid}`
-                    }
-                    alt="example"
-                  />
+                    className="relative"
+                  >
+                    <Image
+                      className="object-cover w-40 h-40 rounded-md bg-white cursor-pointer"
+                      width={500}
+                      height={500}
+                      src={
+                        process.env.NEXT_PUBLIC_API_URL +
+                        `${_face.blob.url}${r.face_uid}`
+                      }
+                      alt="example"
+                    />
+                    <div className="absolute inset-0 flex items-end justify-center rounded-md bg-black bg-opacity-20 text-white">
+                      شباهت: {r.similarity}%
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

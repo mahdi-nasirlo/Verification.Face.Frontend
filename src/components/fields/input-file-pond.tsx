@@ -101,7 +101,7 @@ export default function InputFilePond({
         allowProcess={props.allowProcess || false}
         maxFileSize="5MB"
         labelMaxFileSizeExceeded="حجم فایل بیش از حد مجاز است"
-        labelMaxFileSize={`حداکثر حجم مجاز فایل 5 مگابایت است`}
+        labelMaxFileSize={`حداکثر حجم مجاز فایل 1 مگابایت است`}
         server={
           props.allowProcess
             ? {

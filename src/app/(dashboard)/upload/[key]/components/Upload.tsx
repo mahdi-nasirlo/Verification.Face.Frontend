@@ -69,7 +69,12 @@ export default function Upload({
                 rules={[{ required: true, message: "آپلود تصویر اجباری است." }]}
                 name="face_Image_Data_Base64"
               >
-                <InputFilePond maxFileSize="1MB" required allowFileEncode />
+                <InputFilePond
+                  // acceptedFileTypes={["imagejpg"]}
+                  maxFileSize="1MB"
+                  required
+                  allowFileEncode
+                />
               </Form.Item>
             </Col>
             <Col xs={24}>

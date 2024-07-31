@@ -25,7 +25,7 @@ const CustomTheme: ThemeConfig = {
       borderRadius: 0,
       itemSelectedBg: "#F3F7FC",
       itemSelectedColor: "#434347",
-      itemColor: "#434347",
+      // itemColor: "#434347",
     },
   },
   token: {

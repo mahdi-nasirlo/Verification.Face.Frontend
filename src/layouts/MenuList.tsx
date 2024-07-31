@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import {
   Camera,
   FolderOpen,
+  HistoryIcon,
   HomeIcon,
   ImagePlus,
   Search,
@@ -35,10 +36,9 @@ export const menuListItems: TMenuItem[] = [
     children: "استعلام",
   },
   {
-    icon: Camera,
-    href: "#",
-    children: "دوربین",
-    disabled: true,
+    icon: HistoryIcon,
+    href: "/history",
+    children: "تاریخچه",
   },
 ];
 

@@ -41,7 +41,7 @@ export default function Page() {
   return (
     <Card
       style={{ boxShadow: "0px 2px 12px 0px #5B5F9A4D" }}
-      className="max-w-[492px] min-h-[550px] mx-auto flex items-center p-9"
+      className="max-w-[492px] min-h-[550px] flex items-center p-3 md:p-9 md:mx-auto mx-3"
     >
       <div className="space-y-14">
         <motion.div

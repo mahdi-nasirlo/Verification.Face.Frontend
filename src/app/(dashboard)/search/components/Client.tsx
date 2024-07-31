@@ -49,7 +49,7 @@ export default function Client() {
       <div className="flex gap-5 flex-col">
         <Typography className="font-bold text-xl">جستوجو</Typography>
         <Card title="آپلود تصویر">
-          <div className="rounded-md p-5 flex flex-col gap-5">
+          <div className="rounded-md p-2 md:p-5 flex flex-col gap-5">
             <Form disabled={isPending} onFinish={onFinish} layout="vertical">
               <Row gutter={[25, 25]}>
                 <Col xs={24} md={6}>
@@ -59,7 +59,11 @@ export default function Client() {
                     ]}
                     name="image_Base64"
                   >
-                    <InputFilePond maxFileSize="1MB" allowFileEncode />
+                    <InputFilePond
+                      // acceptedFileTypes={["image/jpg"]}
+                      maxFileSize="1MB"
+                      allowFileEncode
+                    />
                   </Form.Item>
                 </Col>
                 <Col xs={24} sm={12} className="flex flex-col gap-3">
@@ -76,7 +80,7 @@ export default function Client() {
                       loading={isPending}
                       disabled={isPending}
                       type="link"
-                      className="min-w-full lg:min-w-56"
+                      // className="min-w-full lg:min-w-56"
                     >
                       انصراف
                     </Button>
@@ -85,7 +89,7 @@ export default function Client() {
                       disabled={isPending}
                       htmlType="submit"
                       type="primary"
-                      className="min-w-full lg:min-w-56"
+                      // className="min-w-full lg:min-w-56"
                     >
                       ثبت
                     </Button>

@@ -6,7 +6,7 @@ export default async function Page() {
 
   return (
     <>
-      <ClientPage data={data} />
+      {/* <ClientPage data={data} /> */}
     </>
   );
 }

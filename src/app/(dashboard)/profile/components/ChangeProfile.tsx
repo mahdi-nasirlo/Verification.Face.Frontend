@@ -94,6 +94,8 @@ export default function ChangeProfile({
         setErrorMessage("لطفا فقط یک نفر در مقابل دوربین بایستید");
       } else if (current.score < 0.8) {
         setErrorMessage("لطفا در مقابل دوربین ثابت بایستید");
+      } else if (current.coverage > 0.5) {
+        setErrorMessage("لطفا از دوربین فاصله بگیرید");
       } else if (current.coverage < 0.1) {
         setErrorMessage("لطفا نزدیک تر به دوربین بایستید");
       }

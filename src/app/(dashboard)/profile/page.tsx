@@ -3,8 +3,11 @@
 import { Avatar, Button, Card, Descriptions, Typography } from "antd";
 import { User2Icon } from "lucide-react";
 import ChangeProfile from "./components/ChangeProfile";
+import { useState } from "react";
 
 export default function Page() {
+  const [open, setOpen] = useState<boolean>(false);
+
   const userProfile = {
     name: "John Doe",
     email: "john.doe@example.com",
@@ -26,7 +29,8 @@ export default function Page() {
               icon={<User2Icon />}
               style={{ backgroundColor: "#87d068" }}
             />
-            <ChangeProfile />
+            <Button onClick={() => setOpen(true)}>اپلود تصویر جدید</Button>
+            {open && <ChangeProfile open={open} setOpen={setOpen} />}
           </div>
         </Card>
         <Card className="flex-grow">

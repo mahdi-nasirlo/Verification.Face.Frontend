@@ -86,3 +86,17 @@
   background-color: transparent;
   border: 1px solid rgb(107 114 128);
 }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating-progress {
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}

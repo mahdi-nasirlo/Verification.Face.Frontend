@@ -1,35 +1,12 @@
 "use client";
 
-import { CardWrapper } from "@/root/src/components/CardWrappper";
-import Title from "@/root/src/components/Title";
-import BreadcrumbPage from "@/root/src/components/breadcrumb-page/breadcrumb-page";
 import InputFilePond from "@/root/src/components/fields/input-file-pond";
-import { _face } from "@/root/src/constants/Face";
-import { _recognition } from "@/root/src/constants/Recognition";
-import { useGetAll } from "@/root/src/hooks/Recognition/useGetAll";
 import {
   NewSearchType,
   useNewSearch,
 } from "@/root/src/hooks/Recognition/useNewSearch";
-import {
-  Button,
-  Card,
-  Col,
-  Descriptions,
-  Flex,
-  Form,
-  Row,
-  Select,
-  Tag,
-  Typography,
-} from "antd";
-import Meta from "antd/lib/card/Meta";
-import { Loader, Upload } from "lucide-react";
+import { Button, Card, Col, Flex, Form, Row, Select, Typography } from "antd";
 import { useRouter } from "next-nprogress-bar";
-import Image from "next/image";
-import React from "react";
-import SimilarImage from "./SimilarImage";
-import { _Form_Property } from "@/root/src/constants/Form-Property";
 
 export default function Client() {
   const router = useRouter();

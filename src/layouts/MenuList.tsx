@@ -7,6 +7,7 @@ import {
   HomeIcon,
   ImagePlus,
   Search,
+  User2Icon,
   Users,
 } from "lucide-react";
 import Link from "next/link";
@@ -39,6 +40,11 @@ export const menuListItems: TMenuItem[] = [
     icon: HistoryIcon,
     href: "/history",
     children: "تاریخچه",
+  },
+  {
+    icon: User2Icon,
+    href: "/profile",
+    children: "پروفایل",
   },
 ];
 

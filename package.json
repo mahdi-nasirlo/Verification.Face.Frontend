@@ -17,6 +17,7 @@
     "antd": "^5.16.4",
     "axios": "^1.6.8",
     "cookies-next": "^4.2.1",
+    "face-api.js": "^0.22.2",
     "filepond": "^4.31.1",
     "filepond-plugin-file-encode": "^2.1.14",
     "filepond-plugin-file-validate-size": "^2.2.8",

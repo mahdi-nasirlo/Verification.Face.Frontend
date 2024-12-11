@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <>
       <div className="mb-5">
-        <Typography className="text-lg">تاریخچه جستوجو</Typography>
+        <Typography className="text-lg">تاریخچه جستجو</Typography>
       </div>
       <Card>
         <Row gutter={[16, 16]}>

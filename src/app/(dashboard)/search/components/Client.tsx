@@ -47,7 +47,7 @@ export default function Client() {
   return (
     <>
       <div className="flex gap-5 flex-col">
-        <Typography className="font-bold text-xl">جستوجو</Typography>
+        <Typography className="font-bold text-xl">جستجو</Typography>
         <Card title="آپلود تصویر">
           <div className="rounded-md p-2 md:p-5 flex flex-col gap-5">
             <Form disabled={isPending} onFinish={onFinish} layout="vertical">

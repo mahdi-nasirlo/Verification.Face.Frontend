@@ -53,14 +53,14 @@ export default function VarificationFaces({ data }: { data: TData }) {
         }
       >
         <div className="flex justify-between items-center">
-          <span>تاریخ جستوجو:</span>
+          <span>تاریخ جستجو:</span>
           <span>{moment.from(data.createdAt, "en").format("YYYY/MM/DD")}</span>
         </div>
       </Card>
       <Modal
         width={1000}
         footer={[]}
-        title="چهره های مورد جستوجو"
+        title="چهره های مورد جستجو"
         open={open}
         onCancel={() => setOpen(false)}
         className="max-h-[500px] top-7"
@@ -111,14 +111,14 @@ export default function VarificationFaces({ data }: { data: TData }) {
                   process.env.NEXT_PUBLIC_API_URL +
                   `${_recognition.download.url}${i.recognition_uid}`
                 }
-                alt="example"
+                alt="تصویر اصلی"
               />
               <div className="flex md:grid space-x-3 gap-3 grid-cols-5 border-primary border bg-primary bg-opacity-25 rounded p-2 col-span-3 md:col-span-5 overflow-y-hidden overflow-x-auto">
                 {i.results.map((r) => (
                   <div
                     key={r.face_uid}
                     onClick={() => setFace(r.face_uid)}
-                    className="relative"
+                    className="relative cursor-pointer"
                   >
                     <Image
                       className="object-cover w-40 h-40 rounded-md bg-white cursor-pointer"
@@ -128,7 +128,7 @@ export default function VarificationFaces({ data }: { data: TData }) {
                         process.env.NEXT_PUBLIC_API_URL +
                         `${_face.blob.url}${r.face_uid}`
                       }
-                      alt="example"
+                      alt={`${r.similarity}`}
                     />
                     <div className="absolute inset-0 flex items-end justify-center rounded-md bg-black bg-opacity-20 text-white">
                       شباهت: {r.similarity}%

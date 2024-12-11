@@ -26,6 +26,7 @@ export default function LayoutMain({ children }: Props) {
         transition={{ duration: 0.5 }}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
+        className="sticky top-0 z-50"
       >
         <Header />
       </motion.div>
@@ -36,7 +37,11 @@ export default function LayoutMain({ children }: Props) {
             borderRadius: borderRadiusLG,
           }}
         >
-          <Sidebar />
+          {/* Updated Sidebar Wrapper */}
+          <div className="sticky top-[112px] h-[calc(100vh-112px)] overflow-y-auto overflow-x-hidden">
+            <Sidebar />
+          </div>
+          {/* End Sidebar Wrapper */}
           <Content>{children}</Content>
         </Layout>
       </Content>
@@ -45,9 +50,9 @@ export default function LayoutMain({ children }: Props) {
         className="p-2 mt-3 justify-between text-sm font-normal px-3 z-50  hidden lg:flex"
       >
         <span>
-          {moment().locale("fa").format("dddd jD jMMMM jYYYY - ساعت H:mm")}
+          {moment().locale("fa").format("dddd jD jMMMM jYYYY - \u0633\u0627\u0639\u062a H:mm")}
         </span>
-        <span className="opacity-60">نسخه ۱.۰</span>
+        <span className="opacity-60">\u0646\u0633\u062e\u0647 \u06f1.\u06f0</span>
       </Footer> */}
     </Layout>
   );

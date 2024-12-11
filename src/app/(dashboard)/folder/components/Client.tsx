@@ -69,7 +69,7 @@ export default function Client({ parent_UID }: { parent_UID?: string | null }) {
         </div>
         {tab == "list" && (
           <div className="max-w-96 hidden lg:block relative mb-5 flex-grow items-center">
-            <Input size="large" placeholder="جستوجو..." />
+            <Input size="large" placeholder="جستجو..." />
             <Search className="absolute top-1 left-1" />
           </div>
         )}

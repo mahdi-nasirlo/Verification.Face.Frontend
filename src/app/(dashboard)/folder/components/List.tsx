@@ -84,7 +84,7 @@ export default function List({ parent_UID }: { parent_UID?: string | null }) {
                 cover={
                   <div className="relative">
                     <Image
-                      className="w-full object-cover h-52 rounded-t-lg"
+                      className="w-full p-1 object-cover h-52 rounded-t-lg"
                       width={500}
                       height={500}
                       src={

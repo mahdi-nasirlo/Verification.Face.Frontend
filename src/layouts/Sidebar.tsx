@@ -6,7 +6,10 @@ import { menuListItems } from "./MenuList";
 export default function Sidebar() {
   return (
     <Layout.Sider
-      style={{ background: CustomTheme.token?.colorBgContainer }}
+      style={{
+        background: CustomTheme.token?.colorBgContainer,
+        borderRadius: "16px !important",
+      }}
       className="rounded-xl py-6 hidden lg:block max-h-[80vh]"
       width={101}
     >

@@ -40,7 +40,7 @@ export default function VarificationFaces({ data }: { data: TData }) {
         cover={
           <div className="relative">
             <Image
-              className="w-full object-cover h-52"
+              className="w-full p-1 rounded-t-lg object-cover h-52"
               width={500}
               height={500}
               src={
@@ -118,7 +118,7 @@ export default function VarificationFaces({ data }: { data: TData }) {
                   <div
                     key={r.face_uid}
                     onClick={() => setFace(r.face_uid)}
-                    className="relative cursor-pointer"
+                    className="relative cursor-pointer min-w-36"
                   >
                     <Image
                       className="object-cover w-40 h-40 rounded-md bg-white cursor-pointer"

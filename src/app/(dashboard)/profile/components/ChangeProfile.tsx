@@ -84,8 +84,8 @@ export default function ChangeProfile({
         const faceCenterY = faceBox.y + faceBox.height / 2;
 
         const isCentered =
-          Math.abs(faceCenterX - videoCenterX) < videoRect.width * 0.1 &&
-          Math.abs(faceCenterY - videoCenterY) < videoRect.height * 0.1;
+          Math.abs(faceCenterX - videoCenterX) < videoRect.width * 0.3 &&
+          Math.abs(faceCenterY - videoCenterY) < videoRect.height * 0.3;
 
         setCurrent({
           total: detections.length,
@@ -122,7 +122,7 @@ export default function ChangeProfile({
         setErrorMessage("لطفا در مقابل دوربین بایستید");
       } else if (current.total > 1) {
         setErrorMessage("لطفا فقط یک نفر در مقابل دوربین بایستید");
-      } else if (current.score < 0.8) {
+      } else if (current.score < 0.7) {
         setErrorMessage("لطفا در مقابل دوربین ثابت بایستید");
       } else if (current.coverage > 0.3) {
         setErrorMessage("لطفا از دوربین فاصله بگیرید");

@@ -21,7 +21,7 @@ export default function Page() {
       <div className="mb-5">
         <Typography className="text-lg">پروفایل</Typography>
       </div>
-      <div className="flex gap-3">
+      <div className="flex flex-col md:flex-row gap-3">
         <Card>
           <div className="text-center space-y-4">
             <Avatar

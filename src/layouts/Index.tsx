@@ -38,11 +38,11 @@ export default function LayoutMain({ children }: Props) {
           }}
         >
           {/* Updated Sidebar Wrapper */}
-          <div className="sticky top-[112px] h-[calc(100vh-112px)] overflow-y-auto overflow-x-hidden">
+          <div className="hidden lg:sticky top-[112px] h-[calc(100vh-112px)] overflow-y-auto overflow-x-hidden">
             <Sidebar />
           </div>
           {/* End Sidebar Wrapper */}
-          <Content>{children}</Content>
+          <Content className="w-full">{children}</Content>
         </Layout>
       </Content>
       {/* <Footer

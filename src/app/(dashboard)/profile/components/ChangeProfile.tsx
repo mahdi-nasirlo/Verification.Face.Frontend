@@ -73,30 +73,26 @@ export default function ChangeProfile({
         new faceapi.TinyFaceDetectorOptions()
       );
 
-      if (detections.length > 0) {
-        const faceBox = detections[0].box;
-        const videoRect = video.getBoundingClientRect();
+      const faceBox = detections[0]?.box;
+      const videoCenterX = video.offsetWidth / 2;
+      const videoCenterY = video.offsetHeight / 2;
 
-        const videoCenterX = videoRect.left + videoRect.width / 2;
-        const videoCenterY = videoRect.top + videoRect.height / 2;
+      const faceCenterX = faceBox?.x + faceBox?.width / 2;
+      const faceCenterY = faceBox?.y + faceBox?.height / 2;
 
-        const faceCenterX = faceBox.x + faceBox.width / 2;
-        const faceCenterY = faceBox.y + faceBox.height / 2;
+      const isCentered =
+        Math.abs(faceCenterX - videoCenterX) < video.offsetWidth * 0.1 &&
+        Math.abs(faceCenterY - videoCenterY) < video.offsetHeight * 0.1;
 
-        const isCentered =
-          Math.abs(faceCenterX - videoCenterX) < videoRect.width * 0.3 &&
-          Math.abs(faceCenterY - videoCenterY) < videoRect.height * 0.3;
-
-        setCurrent({
-          total: detections.length,
-          score: detections[0]?.score || 0,
-          time: new Date(),
-          coverage:
-            (faceBox.height * faceBox.width) /
-              (video.offsetHeight * video.offsetWidth) || 0,
-          isCentered,
-        });
-      }
+      setCurrent({
+        total: detections.length,
+        score: detections[0]?.score || 0,
+        time: new Date(),
+        coverage:
+          (faceBox?.height * faceBox?.width) /
+            (video?.offsetHeight * video?.offsetWidth) || 0,
+        isCentered,
+      });
     }, 900);
   };
 

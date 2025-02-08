@@ -15,7 +15,7 @@ import VarificationFaces from "./components/VarificationFaces";
 export default function Page() {
   const router = useRouter();
 
-  const { data, isFetching } = useGetAll({ need_Detail: true });
+  const { data, isPending } = useGetAll({ need_Detail: true });
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function Page() {
       </div>
       <Card>
         <Row gutter={[16, 16]}>
-          {isFetching &&
+          {isPending &&
             Array.from({ length: 15 }).map((i, index) => (
               <CardWrapper key={index} slug={index} delay={0.1}>
                 <Card cover={<Skeleton.Image className="w-full h-[192px]" />}>
@@ -33,18 +33,19 @@ export default function Page() {
               </CardWrapper>
             ))}
 
-          {data?.map((i, index) => (
-            <CardWrapper key={index} slug={index + data.length} delay={0.1}>
-              <VarificationFaces
-                data={{
-                  uid: i.Recognition_UID,
-                  createdAt: i.Create_DT,
-                  status: i.Status,
-                  faces: i.Recognition_Result,
-                }}
-              />
-            </CardWrapper>
-          ))}
+          {!isPending &&
+            data?.map((i, index) => (
+              <CardWrapper key={index} slug={index + data.length} delay={0.1}>
+                <VarificationFaces
+                  data={{
+                    uid: i.Recognition_UID,
+                    createdAt: i.Create_DT,
+                    status: i.Status,
+                    faces: i.Recognition_Result,
+                  }}
+                />
+              </CardWrapper>
+            ))}
         </Row>
       </Card>
     </>

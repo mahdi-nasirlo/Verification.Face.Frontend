@@ -513,3 +513,8 @@ input[type="number"] {
 .DatePicker {
   @apply w-full !important;
 }
+
+/* alert */
+.ant-alert-info .ant-alert-content .ant-alert-message {
+  @apply text-blue-950;
+}

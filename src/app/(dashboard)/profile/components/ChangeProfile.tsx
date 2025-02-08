@@ -167,9 +167,9 @@ export default function ChangeProfile({
         footer={null}
       >
         <Divider />
-        <div className="relative">
-          {timer !== 0 && !isSuccess ? (
-            <>
+        {timer !== 0 && !isSuccess ? (
+          <>
+            <div className="relative overflow-hidden">
               <video
                 ref={videoRef}
                 autoPlay
@@ -179,49 +179,55 @@ export default function ChangeProfile({
                 onPlay={handleVideoPlay}
                 className="mx-auto w-full top-0 left-0 transform scale-x-[-1]"
               />
+              <div
+                style={{
+                  boxShadow: "0 0 0 99999px rgba(0, 0, 0, .8)",
+                }}
+                className="absolute top-1/2 left-1/2 w-60 h-80 -translate-x-1/2 -translate-y-2/4 rounded-[50%]"
+              ></div>
               <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center pointer-events-none">
-                <div className="relative flex justify-center items-center size-12 border-4 border-dashed border-white border-opacity-50 rounded-full">
+                <div className="relative flex justify-center items-center size-12 rounded-full">
                   <div className="absolute size-2 bg-white bg-opacity-50 rounded-full"></div>
                 </div>
               </div>
-              {timer !== null && timer > 0 && (
-                <Progress
-                  className="mt-4"
-                  strokeLinecap="butt"
-                  percent={(10 - timer) * 10}
-                />
-              )}
-              {errorMessage && (
-                <div
-                  dir="rtl"
-                  className="mt-4 p-2 flex gap-2 items-center text-sm text-red-600 rounded-lg bg-zinc-400 "
-                  role="alert"
-                >
-                  <span className="font-medium">
-                    <FileWarning />
-                  </span>
-                  {errorMessage}
-                </div>
-              )}
-            </>
-          ) : (
-            timer === 0 &&
-            isSuccess && (
-              <motion.div
-                className="w-full h-full top-0 gap-8 left-0 flex items-center justify-center flex-col backdrop-blur-sm"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+            </div>
+            {timer !== null && timer > 0 && (
+              <Progress
+                className="mt-4"
+                strokeLinecap="butt"
+                percent={(10 - timer) * 10}
+              />
+            )}
+            {errorMessage && (
+              <div
+                dir="rtl"
+                className="mt-4 p-2 flex gap-2 items-center text-sm text-red-600 rounded-lg bg-zinc-400 "
+                role="alert"
               >
-                <LucideCheckCircle className="size-20 text-white" />
-                <span dir="rtl" className="font-normal text-xl text-white">
-                  تصویر با موفقیت آپلود شد
+                <span className="font-medium">
+                  <FileWarning />
                 </span>
-              </motion.div>
-            )
-          )}
-        </div>
+                {errorMessage}
+              </div>
+            )}
+          </>
+        ) : (
+          timer === 0 &&
+          isSuccess && (
+            <motion.div
+              className="w-full h-full top-0 gap-8 left-0 flex items-center justify-center flex-col backdrop-blur-sm"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <LucideCheckCircle className="size-20 text-white" />
+              <span dir="rtl" className="font-normal text-xl text-white">
+                تصویر با موفقیت آپلود شد
+              </span>
+            </motion.div>
+          )
+        )}
       </Modal>
     </>
   );

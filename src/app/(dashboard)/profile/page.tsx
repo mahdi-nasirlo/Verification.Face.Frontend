@@ -12,7 +12,7 @@ export default function Page() {
     name: "John Doe",
     email: "john.doe@example.com",
     phone: "+123 456 7890",
-    location: "New York, USA",
+    location: "35.69932,51.39036",
     interests: ["Coding", "Design", "Travel", "Photography"],
   };
 
